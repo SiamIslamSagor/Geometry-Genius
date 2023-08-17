@@ -128,7 +128,8 @@ function addToCalculationEntry(areaType, area){
     const count = calculationEntry.childElementCount;
 
     const p = document.createElement('p');
-    p.classList.add('my-4')
+    p.classList.add('my-4');
+    p.classList.add('text-center');
     p.innerHTML = `
     ${count + 1}. ${areaType} ${area} cm<sup>2</sup> <button class = 'btn btn-sm btn-success mx-2'>Convert</button>
     `;
