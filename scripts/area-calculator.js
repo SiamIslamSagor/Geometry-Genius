@@ -147,3 +147,5 @@ function addToCalculationEntry(areaType, area){
 2. check type using typeof
 3. NaN means: Not a Number. isNaN() is checking whether the input is not a number or not
 */
+
+
