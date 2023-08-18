@@ -19,7 +19,7 @@
       <div class="flex flex-col lg:flex-row">
         <!-- shape container -->
         <div
-          class="flex-1 grid grid-cols-1 w-full mt-8 max-sm:max-w-sm max-sm:p-5 xl:grid-cols-2 xl:ml-16 2xl:grid-cols-3 2xl:ml-20 gap-6"
+          class="flex-1 grid grid-cols-1 w-full mt-8 justify-items-center mx-auto max-sm:max-w-sm max-sm:p-5 xl:grid-cols-2 2xl:grid-cols-3 gap-6"
         >
           <!-- Triangle card -->
           <div class="card w-96 bg-base-100 shadow-xl">
@@ -202,34 +202,34 @@
             </figure>
             <div class="card-body text-center">
               <h2 class="card-title flex justify-center">Pentagon</h2>
-              <p>Area (A) = π ab</p>
+              <p>Area (A) = 0.5 X P x a</p>
               <p>
                 <input
-                  class="border rounded bg-gray-100 text-xl w-24 px-2"
-                  placeholder="Y Axis"
+                  class="border rounded bg-gray-100 text-xl w-28 px-2"
+                  placeholder="perimeter"
                   type="text"
                   name=""
-                  id="ellipse-y-axis"
+                  id="pentagon-perimeter"
                 />
                 <span class="ml-2">cm</span>
 
                 <input
                   class="ml-4 border rounded bg-gray-100 text-xl w-24 px-2"
-                  placeholder="X Axis"
+                  placeholder="apothem"
                   type="text"
                   name=""
-                  id="ellipse-x-axis"
+                  id="pentagon-apothem"
                 />
                 <span class="ml-2">cm</span>
               </p>
               <p class="text-2xl">
                 Area:
-                <span class="font-semibold" id="ellipse-area">0 </span>
+                <span class="font-semibold" id="pentagon-area">0 </span>
                 cm<sup>2</sup>
               </p>
               <div class="card-actions">
                 <button
-                  onclick="calculateEllipseArea()"
+                  onclick="calculatePentagonArea()"
                   class="btn btn-primary w-full mt-2"
                 >
                   calculate
@@ -245,34 +245,34 @@
             </figure>
             <div class="card-body text-center">
               <h2 class="card-title flex justify-center">Rhombus</h2>
-              <p>Area (A) = π ab</p>
+              <p>Area (A) = 0.5 X d1 X d2</p>
               <p>
                 <input
-                  class="border rounded bg-gray-100 text-xl w-24 px-2"
-                  placeholder="Y Axis"
+                  class="border rounded bg-gray-100 text-xl w-28 px-2"
+                  placeholder="diagonal-1"
                   type="text"
                   name=""
-                  id="ellipse-y-axis"
+                  id="diagonal-1"
                 />
                 <span class="ml-2">cm</span>
 
                 <input
-                  class="ml-4 border rounded bg-gray-100 text-xl w-24 px-2"
-                  placeholder="X Axis"
+                  class="ml-4 border rounded bg-gray-100 text-xl w-28 px-2"
+                  placeholder="diagonal-2"
                   type="text"
                   name=""
-                  id="ellipse-x-axis"
+                  id="diagonal-2"
                 />
                 <span class="ml-2">cm</span>
               </p>
               <p class="text-2xl">
                 Area:
-                <span class="font-semibold" id="ellipse-area">0 </span>
+                <span class="font-semibold" id="rhombus-area">0 </span>
                 cm<sup>2</sup>
               </p>
               <div class="card-actions">
                 <button
-                  onclick="calculateEllipseArea()"
+                  onclick="calculateRhombusArea()"
                   class="btn btn-primary w-full mt-2"
                 >
                   calculate

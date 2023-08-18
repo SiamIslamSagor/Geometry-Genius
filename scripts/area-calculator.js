@@ -91,6 +91,42 @@ function calculateEllipseArea() {
 }
 
 
+function calculatePentagonArea(){
+  const perimeter = getInputValue('pentagon-perimeter');
+
+  const apothem = getInputValue('pentagon-apothem');
+
+  const area = 0.5 * perimeter * apothem;
+
+  if (isNaN(perimeter) || isNaN(apothem)) {
+    alert("Please insert a number");
+    return;
+  }
+
+  setElementInnerText('pentagon-area', area);
+
+  addToCalculationEntry('Pentagon', area);
+}
+
+function calculateRhombusArea(){
+  const diagonal1 = getInputValue('diagonal-1');
+
+  const diagonal2 = getInputValue('diagonal-2');
+
+  const area = 0.5 * diagonal1 * diagonal2;
+
+  if(isNaN(diagonal1) || isNaN(diagonal2)){
+    alert('Please insert a number');
+    return;
+  }
+
+  setElementInnerText('rhombus-area', area);
+
+  addToCalculationEntry('Rhombus', area);
+}
+
+
+
 
 
 
@@ -122,7 +158,6 @@ function setElementInnerText(elementId, area) {
  * 6. 
  * **/
 function addToCalculationEntry(areaType, area){
-    console.log(areaType+ ' ' + area);
     const calculationEntry = document.getElementById('calculation-entry');
 
     const count = calculationEntry.childElementCount;
