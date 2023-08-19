@@ -22,7 +22,7 @@ function calculateTriangleArea() {
   areaSpan.innerText = area;
 
   // add to calculation entry
-  addToCalculationEntry('Triangle', area);
+  addToCalculationEntry("Triangle", area);
 }
 
 function calculateRectangleArea() {
@@ -47,9 +47,9 @@ function calculateRectangleArea() {
   // show rectangle area
   const rectangleAreaSpan = document.getElementById("rectangle-area");
   rectangleAreaSpan.innerText = area;
-  
+
   // add to calculation entry
-  addToCalculationEntry('Rectangle', area);
+  addToCalculationEntry("Rectangle", area);
 }
 
 // reusable function --> reduce duplicate code
@@ -68,7 +68,7 @@ function calculateParallelogramArea() {
   setElementInnerText("parallelogram-area", area);
 
   // add to calculation entry
-  addToCalculationEntry('Parallelogram', area);
+  addToCalculationEntry("Parallelogram", area);
 }
 
 function calculateEllipseArea() {
@@ -87,14 +87,13 @@ function calculateEllipseArea() {
   setElementInnerText("ellipse-area", areaInTowDecimal);
 
   // add to calculation entry
-  addToCalculationEntry('Ellipse', areaInTowDecimal);
+  addToCalculationEntry("Ellipse", areaInTowDecimal);
 }
 
+function calculatePentagonArea() {
+  const perimeter = getInputValue("pentagon-perimeter");
 
-function calculatePentagonArea(){
-  const perimeter = getInputValue('pentagon-perimeter');
-
-  const apothem = getInputValue('pentagon-apothem');
+  const apothem = getInputValue("pentagon-apothem");
 
   const area = 0.5 * perimeter * apothem;
 
@@ -103,32 +102,27 @@ function calculatePentagonArea(){
     return;
   }
 
-  setElementInnerText('pentagon-area', area);
+  setElementInnerText("pentagon-area", area);
 
-  addToCalculationEntry('Pentagon', area);
+  addToCalculationEntry("Pentagon", area);
 }
 
-function calculateRhombusArea(){
-  const diagonal1 = getInputValue('diagonal-1');
+function calculateRhombusArea() {
+  const diagonal1 = getInputValue("diagonal-1");
 
-  const diagonal2 = getInputValue('diagonal-2');
+  const diagonal2 = getInputValue("diagonal-2");
 
   const area = 0.5 * diagonal1 * diagonal2;
 
-  if(isNaN(diagonal1) || isNaN(diagonal2)){
-    alert('Please insert a number');
+  if (isNaN(diagonal1) || isNaN(diagonal2)) {
+    alert("Please insert a number");
     return;
   }
 
-  setElementInnerText('rhombus-area', area);
+  setElementInnerText("rhombus-area", area);
 
-  addToCalculationEntry('Rhombus', area);
+  addToCalculationEntry("Rhombus", area);
 }
-
-
-
-
-
 
 // FUNCTION:
 
@@ -146,8 +140,6 @@ function setElementInnerText(elementId, area) {
   element.innerText = area;
 }
 
-
-
 // add to calculation entry
 /**
  * 1. get the element where you want to add the dynamic HTML
@@ -155,27 +147,25 @@ function setElementInnerText(elementId, area) {
  * 3. if needed add some class
  * 4. set innerHTML, it could be dynamic template string
  * 5. append the created element as a child of the parent
- * 6. 
+ * 6.
  * **/
-function addToCalculationEntry(areaType, area){
-    const calculationEntry = document.getElementById('calculation-entry');
+function addToCalculationEntry(areaType, area) {
+  const calculationEntry = document.getElementById("calculation-entry");
 
-    const count = calculationEntry.childElementCount;
+  const count = calculationEntry.childElementCount;
 
-    const p = document.createElement('p');
-    p.classList.add('my-4');
-    p.classList.add('text-center');
-    p.innerHTML = `
-    ${count + 1}. ${areaType} ${area} cm<sup>2</sup> <button class = 'btn btn-sm btn-success mx-2'>Convert</button>
+  const div = document.createElement("div");
+  div.classList.add("my-4");
+  div.classList.add("text-center");
+  div.classList.add("flex", "justify-between");
+  div.innerHTML = `
+    <p>${
+      count + 1
+    }. ${areaType} ${area} cm<sup>2</sup></p> <button class = 'btn btn-sm btn-success mx-2'>Convert</button>
     `;
 
-    calculationEntry.appendChild(p);
+  calculationEntry.appendChild(div);
 }
-
-
-
-
-
 
 // Data validation
 /* 
@@ -183,5 +173,3 @@ function addToCalculationEntry(areaType, area){
 2. check type using typeof
 3. NaN means: Not a Number. isNaN() is checking whether the input is not a number or not
 */
-
-
